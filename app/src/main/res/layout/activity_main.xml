@@ -20,4 +20,20 @@
         android:text="Change"
         android:textAllCaps="false"
         />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ButtonGetContent"
+        android:text="GetContent"
+        android:textAllCaps="false"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Edit_Name"
+        android:hint="Type Something Here"
+        android:maxLines="3"
+        />
 </LinearLayout>
