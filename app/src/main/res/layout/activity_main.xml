@@ -5,11 +5,19 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/text_view"
+        android:id="@+id/txt_Content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="bottom|left"
+        android:gravity="center"
         android:textSize="24sp"
         android:textColor="#00ff00"
         android:text="This is TextView" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ButtonChange"
+        android:text="Change"
+        android:textAllCaps="false"
+        />
 </LinearLayout>
