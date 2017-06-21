@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,11 +15,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button buttonChange = (Button) findViewById(R.id.ButtonChange);
-        buttonChange.setOnClickListener(this);
-        Button buttonGetContent = (Button) findViewById(R.id.ButtonGetContent);
-        buttonGetContent.setOnClickListener(this);
+        //setContentView(R.layout.activity_main);
+        LinearLayout MainLayout = (LinearLayout) getLayoutInflater().inflate(R.layout.activity_main, null);
+        setContentView(MainLayout);
+        for (int i = 0; i < MainLayout.getChildCount(); i++) {
+            View v = MainLayout.getChildAt(i);
+            if (v instanceof Button)
+            {
+                Button button = (Button) v;
+//                Toast.makeText(MainActivity.this,button.getText().toString(),Toast.LENGTH_SHORT).show();
+                button.setOnClickListener(this);
+            }
+        }
+
+//        Button buttonChange = (Button) findViewById(R.id.ButtonChange);
+//        buttonChange.setOnClickListener(this);
+//        Button buttonGetContent = (Button) findViewById(R.id.ButtonGetContent);
+//        buttonGetContent.setOnClickListener(this);
 
 //        Button buttonChange = (Button) findViewById(R.id.ButtonChange);
 //        buttonChange.setOnClickListener(new View.OnClickListener()
