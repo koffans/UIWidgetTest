@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        IntialParameters();
+        InitialParameters();
         //setContentView(R.layout.activity_main);
         LinearLayout MainLayout = (LinearLayout) getLayoutInflater().inflate(R.layout.activity_main, null);
         setContentView(MainLayout);
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        );
     }
 
-    private void IntialParameters()
+    private void InitialParameters()
     {
         ImageIndex = true;
     }
@@ -61,13 +62,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                TextView txt_Content = (TextView) findViewById(R.id.txt_Content);
 //                txt_Content.setText("chen");
 //                Toast.makeText(MainActivity.this,"Click!",Toast.LENGTH_SHORT).show();
-                ImageIndex = !ImageIndex;
-
-                ImageView ImageContainer = (ImageView) findViewById(R.id.ImageContainer);
-                if (ImageIndex)
-                    ImageContainer.setImageResource(R.mipmap.img_1);
-                else
-                    ImageContainer.setImageResource(R.mipmap.img_2);
+//                ImageIndex = !ImageIndex;
+//
+//                ImageView ImageContainer = (ImageView) findViewById(R.id.ImageContainer);
+//                if (ImageIndex)
+//                    ImageContainer.setImageResource(R.mipmap.img_1);
+//                else
+//                    ImageContainer.setImageResource(R.mipmap.img_2);
+                ProgressBar ProgressBarCtl = (ProgressBar) findViewById(R.id.ProgressBar);
+//                if (ProgressBarCtl.getVisibility() == View.GONE)
+//                    ProgressBarCtl.setVisibility(View.VISIBLE);
+//                else
+//                    ProgressBarCtl.setVisibility(View.GONE);
+                ProgressBarCtl.setProgress(ProgressBarCtl.getProgress() + 10);
                 break;
             case R.id.ButtonGetContent:
                 EditText txtContent = (EditText) findViewById(R.id.Edit_Name);
