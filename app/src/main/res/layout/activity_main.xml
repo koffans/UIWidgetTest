@@ -21,6 +21,14 @@
         android:textAllCaps="false"
         />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Edit_Name"
+        android:hint="Type Something Here"
+        android:maxLines="3"
+        />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,11 +37,10 @@
         android:textAllCaps="false"
         />
 
-    <EditText
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Edit_Name"
-        android:hint="Type Something Here"
-        android:maxLines="3"
+        android:id="@+id/ImageContainer"
+        android:src="@mipmap/img_1"
         />
 </LinearLayout>

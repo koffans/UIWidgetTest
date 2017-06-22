@@ -6,15 +6,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    boolean ImageIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        IntialParameters();
         //setContentView(R.layout.activity_main);
         LinearLayout MainLayout = (LinearLayout) getLayoutInflater().inflate(R.layout.activity_main, null);
         setContentView(MainLayout);
@@ -45,14 +48,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        );
     }
 
+    private void IntialParameters()
+    {
+        ImageIndex = true;
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId())
         {
             case R.id.ButtonChange:
-                TextView txt_Content = (TextView) findViewById(R.id.txt_Content);
-                txt_Content.setText("chen");
+//                TextView txt_Content = (TextView) findViewById(R.id.txt_Content);
+//                txt_Content.setText("chen");
 //                Toast.makeText(MainActivity.this,"Click!",Toast.LENGTH_SHORT).show();
+                ImageIndex = !ImageIndex;
+
+                ImageView ImageContainer = (ImageView) findViewById(R.id.ImageContainer);
+                if (ImageIndex)
+                    ImageContainer.setImageResource(R.mipmap.img_1);
+                else
+                    ImageContainer.setImageResource(R.mipmap.img_2);
                 break;
             case R.id.ButtonGetContent:
                 EditText txtContent = (EditText) findViewById(R.id.Edit_Name);
