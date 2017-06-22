@@ -1,5 +1,7 @@
 package com.example.kof.uiwidgettest;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -69,12 +71,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                    ImageContainer.setImageResource(R.mipmap.img_1);
 //                else
 //                    ImageContainer.setImageResource(R.mipmap.img_2);
-                ProgressBar ProgressBarCtl = (ProgressBar) findViewById(R.id.ProgressBar);
+//                ProgressBar ProgressBarCtl = (ProgressBar) findViewById(R.id.ProgressBar);
 //                if (ProgressBarCtl.getVisibility() == View.GONE)
 //                    ProgressBarCtl.setVisibility(View.VISIBLE);
 //                else
 //                    ProgressBarCtl.setVisibility(View.GONE);
-                ProgressBarCtl.setProgress(ProgressBarCtl.getProgress() + 10);
+//                ProgressBarCtl.setProgress(ProgressBarCtl.getProgress() + 10);
+                AlertDialog.Builder AlertDelete = new AlertDialog.Builder(MainActivity.this);
+                AlertDelete.setTitle("System Alert!");
+                AlertDelete.setMessage("Are You Sure to Delete This Info?");
+                AlertDelete.setCancelable(false);
+                AlertDelete.setPositiveButton("Yes",new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this,"Delete!",Toast.LENGTH_SHORT).show();
+                    }
+                });
+                AlertDelete.setNegativeButton("No", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this,"Cancel Delete!",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                AlertDelete.show();
                 break;
             case R.id.ButtonGetContent:
                 EditText txtContent = (EditText) findViewById(R.id.Edit_Name);
